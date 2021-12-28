@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 17:51:55 by ttomori           #+#    #+#             */
-/*   Updated: 2021/12/28 17:53:33 by ttomori          ###   ########.fr       */
+/*   Updated: 2021/12/28 23:55:33 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	int	*p;
+	char	*p;
 
-	p = (int *)s;
+	p = (char *)s;
 	while (n-- > 0)
-		*(p + n) = 0;
+		*(p + n) = '\0';
 }
