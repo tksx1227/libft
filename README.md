@@ -3,8 +3,8 @@
 
 ## Part 1
 - [x] ft_memset
-- [ ] ft_bzero
-- [ ] ft_memcpy
+- [x] ft_bzero
+- [x] ft_memcpy
 - [ ] ft_memccpy
 - [ ] ft_memmove
 - [ ] ft_memchr
