@@ -2,7 +2,7 @@
 42Tokyoの課題（libft）
 
 ## Part 1
-- [ ] ft_memset
+- [x] ft_memset
 - [ ] ft_bzero
 - [ ] ft_memcpy
 - [ ] ft_memccpy
