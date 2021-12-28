@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 17:52:04 by ttomori           #+#    #+#             */
-/*   Updated: 2021/12/28 17:52:05 by ttomori          ###   ########.fr       */
+/*   Updated: 2021/12/28 23:40:40 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,3 +23,14 @@ void	*ft_memset(void *s, int c, size_t n)
 		*(p + n) = uc;
 	return (s);
 }
+
+/*
+int	main(void)
+{
+	char	str[] = "0123456789";
+	
+	ft_memset(str + 2, '*', 5);
+	printf("%s\n", str);
+	return (0);
+}
+*/
