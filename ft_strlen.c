@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 00:47:54 by ttomori           #+#    #+#             */
-/*   Updated: 2021/12/29 00:54:22 by ttomori          ###   ########.fr       */
+/*   Updated: 2021/12/29 17:40:33 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,14 @@ size_t	ft_strlen(const char *s)
 /*
 int	main(void)
 {
-	char	*s = "Hello World!!";
-	size_t	len = ft_strlen(s);
-	printf("len = %ld\n", len);
+	// Parameter
+	char *s = "Hello World!!";
+	
+	printf("---------- strlen ----------\n");
+	printf("len(%s) = %ld\n", s, strlen(s));
+
+	printf("----------ft_strlen ----------\n");
+	printf("len(%s) = %ld\n", s, ft_strlen(s));
+	return (0);
 }
 */
