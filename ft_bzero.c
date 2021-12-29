@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 17:51:55 by ttomori           #+#    #+#             */
-/*   Updated: 2021/12/28 23:58:35 by ttomori          ###   ########.fr       */
+/*   Updated: 2021/12/29 17:28:43 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,29 @@ void	ft_bzero(void *s, size_t n)
 /*
 int	main(void)
 {
-	char	s[] = "0123456789";
+	// Parameters
+	int n = 4;
+	int offset = 3;
 
-	printf("Original: %s\n", s);
-	ft_bzero(s, 3);
-	printf("Shift 2 : %s\n", s + 2);
-	printf("Shift 3 : %s\n", s + 3);
+	printf("---------- bzero ----------\n");
+	char s1[] = "abcdefghi";
+
+	printf("Before: %s\n", s1);
+	bzero(s1 + offset, n);
+	printf("After: ");
+	for (int i = 0; i < 10; i++)
+		printf("0x%02X ", s1[i]);
+	printf("\n");
+	
+	printf("---------- bzero ----------\n");
+	char s2[] = "abcdefghi";
+
+	printf("Before: %s\n", s2);
+	ft_bzero(s2 + offset, n);
+	printf("After: ");
+	for (int i = 0; i < 10; i++)
+		printf("0x%02X ", s2[i]);
+	printf("\n");
 	return (0);
 }
 */
