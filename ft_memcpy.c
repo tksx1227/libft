@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 18:52:08 by ttomori           #+#    #+#             */
-/*   Updated: 2021/12/29 00:37:16 by ttomori          ###   ########.fr       */
+/*   Updated: 2021/12/29 17:36:03 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,30 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 /*
 int	main(void)
 {
-	char	s1[] = {1, 1, 1, 1, 1, 1, 1};
-	char	s2[] = "ab\0cde";
+	// Parameters
+	char src[] = "ab\0cdef";
+	int n = 5;
 
-	for (int i = 0; i < 7; i++)
-		printf("0x%08x ", s1[i]);
+	printf("---------- memcpy ----------\n");
+	char s1[] = {1, 1, 1, 1, 1, 1, 1, 1};
+
+	for (int i = 0; i < 8; i++)
+		printf("0x%02X ", s1[i]);
 	printf("\n");
-	ft_memcpy(s1, s2, 5);
-	for (int i = 0; i < 7; i++)
-		printf("0x%08x ", s1[i]);
+	memcpy(s1, src, n);
+	for (int i = 0; i < 8; i++)
+		printf("0x%02x ", s1[i]);
+	printf("\n");
+	
+	printf("---------- ft_memcpy ----------\n");
+	char s2[] = {1, 1, 1, 1, 1, 1, 1, 1};
+
+	for (int i = 0; i < 8; i++)
+		printf("0x%02X ", s2[i]);
+	printf("\n");
+	memcpy(s2, src, n);
+	for (int i = 0; i < 8; i++)
+		printf("0x%02x ", s2[i]);
 	printf("\n");
 	return (0);
 }
