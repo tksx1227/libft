@@ -23,11 +23,11 @@
 - [ ] ft_strcmp
 - [ ] ft_strncmp
 - [ ] ft_atoi
-- [ ] ft_isalpha
-- [ ] ft_isdigit
-- [ ] ft_isalnum
-- [ ] ft_isascii
-- [ ] ft_isprint
+- [x] ft_isalpha
+- [x] ft_isdigit
+- [x] ft_isalnum
+- [x] ft_isascii
+- [x] ft_isprint
 - [x] ft_toupper
 - [x] ft_tolower
 
