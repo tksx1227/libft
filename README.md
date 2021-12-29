@@ -28,8 +28,8 @@
 - [ ] ft_isalnum
 - [ ] ft_isascii
 - [ ] ft_isprint
-- [ ] ft_toupper
-- [ ] ft_tolower
+- [x] ft_toupper
+- [x] ft_tolower
 
 ## Part 2
 - [ ] ft_memalloc
