@@ -13,7 +13,7 @@
 - [x] ft_strdup
 - [x] ft_strcpy
 - [x] ft_strncpy
-- [ ] ft_strcat
+- [x] ft_strcat
 - [ ] ft_strncat
 - [ ] ft_strlcat
 - [ ] ft_strchr
