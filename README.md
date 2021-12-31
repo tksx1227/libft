@@ -21,7 +21,7 @@
 - [ ] ft_strstr
 - [ ] ft_strnstr
 - [x] ft_strcmp
-- [ ] ft_strncmp
+- [x] ft_strncmp
 - [ ] ft_atoi
 - [x] ft_isalpha
 - [x] ft_isdigit
