@@ -20,7 +20,7 @@
 - [x] ft_strrchr
 - [ ] ft_strstr
 - [ ] ft_strnstr
-- [ ] ft_strcmp
+- [x] ft_strcmp
 - [ ] ft_strncmp
 - [ ] ft_atoi
 - [x] ft_isalpha
