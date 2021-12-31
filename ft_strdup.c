@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 15:51:48 by ttomori           #+#    #+#             */
-/*   Updated: 2021/12/30 15:59:26 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/01 01:20:15 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ char	*ft_strdup(const char *s)
 	return (p);
 }
 
+/*
 int	main(void)
 {
 	// Parameters
@@ -39,3 +40,4 @@ int	main(void)
 	printf("res = %s, address = %p\n", res2, res2);
 	return (0);
 }
+*/
