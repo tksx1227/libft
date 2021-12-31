@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 20:29:54 by ttomori           #+#    #+#             */
-/*   Updated: 2021/12/31 20:43:20 by ttomori          ###   ########.fr       */
+/*   Updated: 2021/12/31 20:50:52 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	main(void)
 {
 	// Parameters
 	char s[] = "Hello World!!!";
-	char c1 = 'W';
+	char c1 = 'o';
 	char c2 = '\0';
 	char c3 = 'u';
 
