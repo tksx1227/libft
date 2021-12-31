@@ -17,7 +17,7 @@
 - [x] ft_strncat
 - [ ] ft_strlcat
 - [x] ft_strchr
-- [ ] ft_strrchr
+- [x] ft_strrchr
 - [ ] ft_strstr
 - [ ] ft_strnstr
 - [ ] ft_strcmp
