@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 21:28:37 by ttomori           #+#    #+#             */
-/*   Updated: 2021/12/31 21:37:07 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/01 01:17:59 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	main(void)
 	printf("strcmp(\"%s\", \"%s\") = %d\n", s1, s3, strcmp(s1, s3));
 	printf("strcmp(\"%s\", \"%s\") = %d\n", s1, s4, strcmp(s1, s4));
 	printf("strcmp(\"%s\", \"%s\") = %d\n", s1, s5, strcmp(s1, s5));
-	
+
 	printf("---------- ft_strcmp ----------\n");
 	printf("ft_strcmp(\"%s\", \"%s\") = %d\n", s1, s2, ft_strcmp(s1, s2));
 	printf("ft_strcmp(\"%s\", \"%s\") = %d\n", s1, s3, ft_strcmp(s1, s3));
