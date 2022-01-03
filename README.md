@@ -36,7 +36,7 @@
 - [x] ft_memdel
 - [x] ft_strnew
 - [x] ft_strdel
-- [ ] ft_strclr
+- [x] ft_strclr
 - [ ] ft_striter
 - [ ] ft_striteri
 - [ ] ft_strmap
