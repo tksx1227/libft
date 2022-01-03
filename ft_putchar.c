@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 12:20:26 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/03 22:09:46 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/03 22:19:39 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,6 @@ int	main(void)
 	char c1 = 'A';
 	char c2 = '\n';
 
-	printf("---------- putchar ----------\n");
-	printf("putchar(%d) & putchar(%d)\n", c1, c2);
-	putchar(c1);
-	putchar(c2);
-
-	printf("---------- ft_putchar ----------\n");
 	printf("ft_putchar(%d) & ft_putchar(%d)\n", c1, c2);
 	ft_putchar(c1);
 	ft_putchar(c2);
