@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 23:34:34 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/03 23:44:07 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/04 00:02:20 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,12 @@
 
 void	*ft_memalloc(size_t size)
 {
-	return (malloc(size));
+	void	*p;
+
+	p = malloc(size);
+	if (p == NULL)
+		return (NULL);
+	return (p);
 }
 
 /*
