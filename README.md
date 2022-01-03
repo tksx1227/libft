@@ -34,7 +34,7 @@
 ## Part 2
 - [x] ft_memalloc
 - [x] ft_memdel
-- [ ] ft_strnew
+- [x] ft_strnew
 - [ ] ft_strdel
 - [ ] ft_strclr
 - [ ] ft_striter

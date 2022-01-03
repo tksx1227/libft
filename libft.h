@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 17:51:07 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/03 23:45:26 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/04 00:03:22 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
+char	*ft_strnew(size_t size);
 char	*ft_strdup(const char *s);
 char	*ft_strcpy(char *dest, const char *src);
 char	*ft_strncpy(char *dest, const char *src, size_t n);
