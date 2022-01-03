@@ -50,7 +50,7 @@
 - [ ] ft_itoa
 - [x] ft_putchar
 - [x] ft_putstr
-- [ ] ft_putnedl
+- [ ] ft_putendl
 - [ ] ft_putnbr
 - [ ] ft_putchar_fd
 - [ ] ft_putstr_fd
