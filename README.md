@@ -51,7 +51,7 @@
 - [x] ft_putchar
 - [x] ft_putstr
 - [x] ft_putendl
-- [ ] ft_putnbr
+- [x] ft_putnbr
 - [ ] ft_putchar_fd
 - [ ] ft_putstr_fd
 - [ ] ft_putendl_fd
