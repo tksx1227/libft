@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 22:28:39 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/03 22:42:12 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/03 23:11:55 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	putnbr_recursion(long long int nbr)
 	if (nbr == 0)
 		return ;
 	putnbr_recursion(nbr / 10);
-	putchar((nbr % 10) + '0');
+	ft_putchar((nbr % 10) + '0');
 }
 
 void	ft_putnbr(int n)
