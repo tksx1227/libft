@@ -32,7 +32,7 @@
 - [x] ft_tolower
 
 ## Part 2
-- [ ] ft_memalloc
+- [x] ft_memalloc
 - [ ] ft_memdel
 - [ ] ft_strnew
 - [ ] ft_strdel
