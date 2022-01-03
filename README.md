@@ -49,7 +49,7 @@
 - [ ] ft_strsplit
 - [ ] ft_itoa
 - [x] ft_putchar
-- [ ] ft_putstr
+- [x] ft_putstr
 - [ ] ft_putnedl
 - [ ] ft_putnbr
 - [ ] ft_putchar_fd
