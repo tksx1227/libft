@@ -25,7 +25,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 			return (*p1 - *p2);
 		p1++;
 		p2++;
-	}		
+	}
 	return (0);
 }
 
@@ -40,7 +40,7 @@ int	main(void)
 	printf("---------- memcmp ----------\n");
 	int res1 = memcmp(s1, s2, n);
 	printf("memcmp(\"%s\", \"%s\", %d) = %d\n", s1, s2, n, res1);
-	
+
 	printf("---------- ft_memcmp ----------\n");
 	int res2 = ft_memcmp(s1, s2, n);
 	printf("ft_memcmp(\"%s\", \"%s\", %d) = %d\n", s1, s2, n, res2);
