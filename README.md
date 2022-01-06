@@ -27,7 +27,7 @@
 - [x] ft_strdup
 
 ## Part 2
-- [ ] ft_substr
+- [x] ft_substr
 - [ ] ft_strjoin
 - [ ] ft_strtrim
 - [ ] ft_split
