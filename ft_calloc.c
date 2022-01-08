@@ -6,19 +6,19 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 21:53:47 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/06 22:20:10 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/08 11:44:00 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
 	void	*p;
 
-	if (nmemb == 0 || size == 0 || ULONG_MAX / nmemb <= size)
+	if (count == 0 || size == 0 || ULONG_MAX / count <= size)
 		return (NULL);
-	p = malloc(nmemb * size);
+	p = malloc(count * size);
 	if (p == NULL)
 		return (NULL);
 	return (p);
