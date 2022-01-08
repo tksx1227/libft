@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 01:09:55 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/09 01:22:34 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/09 01:45:17 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static char	f(unsigned int i, char c)
 {
 	char	res;
 
-	res = (c * i + 33) % 126;
+	res = ((c * i) % 94) + 33;
 	return (res);
 }
 
@@ -47,7 +47,8 @@ int	main(void)
 	char s[] = "Hello World!!!";
 
 	char *res = ft_strmapi(s, f);
-	printf("Result: \"%s\"\n", res);
+	printf("Original: \"%s\"\n", s);
+	printf("Result  : \"%s\"\n", res);
 	free(res);
 	return (0);
 }
