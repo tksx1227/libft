@@ -6,13 +6,13 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 18:52:08 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/08 11:48:58 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/08 19:57:37 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *restrict dest, const void *restrict src, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	char		*p1;
 	const char	*p2;
