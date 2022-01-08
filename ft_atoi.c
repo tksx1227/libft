@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 12:09:46 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/08 12:52:42 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/08 20:05:11 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ static int	ft_isspace(int c)
 
 int	ft_atoi(const char *str)
 {
-	int		num;
-	int		minus_flag;
-	char	*p;
+	long long int	num;
+	int				minus_flag;
+	char			*p;
 
 	num = 0;
 	minus_flag = 1;
@@ -53,18 +53,24 @@ int	main(void)
 	char s2[] = " -+234+34";
 	char s3[] = "  a 342414";
 	char s4[] = "  -1234567abc34\t";
+	char s5[] = "2147483647";
+	char s6[] = "-2147483648";
 
 	printf("---------- atoi ---------\n");
 	printf("atoi(\"%s\") = %d\n", s1, atoi(s1));
 	printf("atoi(\"%s\") = %d\n", s2, atoi(s2));
 	printf("atoi(\"%s\") = %d\n", s3, atoi(s3));
 	printf("atoi(\"%s\") = %d\n", s4, atoi(s4));
+	printf("atoi(\"%s\") = %d\n", s5, atoi(s5));
+	printf("atoi(\"%s\") = %d\n", s6, atoi(s6));
 
 	printf("---------- ft_atoi ---------\n");
 	printf("ft_atoi(\"%s\") = %d\n", s1, ft_atoi(s1));
 	printf("ft_atoi(\"%s\") = %d\n", s2, ft_atoi(s2));
 	printf("ft_atoi(\"%s\") = %d\n", s3, ft_atoi(s3));
 	printf("ft_atoi(\"%s\") = %d\n", s4, ft_atoi(s4));
+	printf("ft_atoi(\"%s\") = %d\n", s5, ft_atoi(s5));
+	printf("ft_atoi(\"%s\") = %d\n", s6, ft_atoi(s6));
 	return (0);
 }
 */
