@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 17:51:07 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/08 15:29:55 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/08 15:31:44 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 size_t	ft_strlen(const char *s);
-size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t size);
-size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t size);
+size_t	ft_strlcpy(char *restrict dest, const char *restrict src, size_t size);
+size_t	ft_strlcat(char *restrict dest, const char *restrict src, size_t size);
 
 #endif
