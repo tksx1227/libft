@@ -21,7 +21,7 @@
 - [x] ft_strncmp
 - [x] ft_memchr
 - [x] ft_memcmp
-- [ ] ft_strnstr
+- [x] ft_strnstr
 - [x] ft_atoi
 - [x] ft_calloc
 - [x] ft_strdup
