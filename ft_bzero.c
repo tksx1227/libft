@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 17:51:55 by ttomori           #+#    #+#             */
-/*   Updated: 2021/12/29 17:28:43 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/08 17:11:44 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char	*p;
-
-	p = (char *)s;
-	while (n-- > 0)
-		*(p + n) = '\0';
+	ft_memset(s, 0, n);
 }
 
 /*
@@ -37,7 +33,7 @@ int	main(void)
 	for (int i = 0; i < 10; i++)
 		printf("0x%02X ", s1[i]);
 	printf("\n");
-	
+
 	printf("---------- bzero ----------\n");
 	char s2[] = "abcdefghi";
 
