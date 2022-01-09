@@ -6,24 +6,27 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 09:40:49 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/09 12:38:20 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/09 23:30:50 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_char(char const *s, char c)
+static int	count_elem(char const *s, char c)
 {
-	int		counter;
 	char	*p;
+	int		counter;
 
 	counter = 0;
 	p = (char *)s;
 	while (*p != '\0')
 	{
-		if (*p == c)
+		while (*p != '\0' && *p == c)
+			p++;
+		if (*p != '\0')
 			counter++;
-		p++;
+		while (*p != '\0' && *p != c)
+			p++;
 	}
 	return (counter);
 }
@@ -58,13 +61,15 @@ char	**ft_split(char const *s, char c)
 	char	*head;
 	char	**str_array;
 
-	size = count_char(s, c) + 1;
+	size = count_elem(s, c);
 	str_array = (char **)malloc(sizeof(char *) * (size + 1));
 	if (str_array == NULL)
 		return (NULL);
 	i = 0;
 	while (i < size)
 	{
+		while (*s != '\0' && *s == c)
+			s++;
 		len = 0;
 		head = (char *)s;
 		while (*s != '\0' && *s++ != c)
@@ -95,42 +100,36 @@ static void	free_all(char **s)
 	free(s);
 }
 
+void	do_test(char *s, char c)
+{
+	printf("str = \"%s\", delimiter = '%c'\n", s, c);
+	char **res = ft_split(s, c);
+	print_array(res);
+	printf("------------------------------------------\n");
+	free_all(res);
+}
+
 int	main(void)
 {
 	// Parameters
-	char s[] = "ABCDABCDABCD!!!!AB";
+	char s1[] = "ABCDABC DABCD!!!!AB";
+	char s2[] = "";
+	char s3[] = "CCCCCCCCC";
+	char s4[] = " ";
 	char c1 = 'C';
 	char c2 = 'A';
 	char c3 = '!';
 	char c4 = 'O';
+	char c5 = ' ';
 
-	printf("----------------------------------------\n");
-	printf("str = \"%s\", delimiter = '%c'\n", s, c1);
-	printf("----------------------------------------\n");
-	char **res1 = ft_split(s, c1);
-	print_array(res1);
-	free_all(res1);
-
-	printf("----------------------------------------\n");
-	printf("str = \"%s\", delimiter = '%c'\n", s, c2);
-	printf("----------------------------------------\n");
-	char **res2 = ft_split(s, c2);
-	print_array(res2);
-	free_all(res2);
-
-	printf("----------------------------------------\n");
-	printf("str = \"%s\", delimiter = '%c'\n", s, c3);
-	printf("----------------------------------------\n");
-	char **res3 = ft_split(s, c3);
-	print_array(res3);
-	free_all(res3);
-
-	printf("----------------------------------------\n");
-	printf("str = \"%s\", delimiter = '%c'\n", s, c4);
-	printf("----------------------------------------\n");
-	char **res4 = ft_split(s, c4);
-	print_array(res4);
-	free_all(res4);
+	do_test(s1, c1);
+	do_test(s1, c2);
+	do_test(s1, c3);
+	do_test(s1, c4);
+	do_test(s1, c5);
+	do_test(s2, c1);
+	do_test(s3, c1);
+	do_test(s4, c1);
 
 	return (0);
 }
