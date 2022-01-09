@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 15:51:48 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/01 01:20:15 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/09 10:39:52 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,14 @@ int	main(void)
 	char *res1 = strdup(s);
 	printf("str = %s, address = %p\n", s, s);
 	printf("res = %s, address = %p\n", res1, res1);
+	free(res1);
 
 	printf("---------- ft_strdup ----------\n");
 	char *res2 = ft_strdup(s);
 	printf("str = %s, address = %p\n", s, s);
 	printf("res = %s, address = %p\n", res2, res2);
+	free(res2);
+
 	return (0);
 }
 */
