@@ -29,7 +29,7 @@
 ## Part 2
 - [x] ft_substr
 - [x] ft_strjoin
-- [ ] ft_strtrim
+- [x] ft_strtrim
 - [x] ft_split
 - [x] ft_itoa
 - [x] ft_strmapi
