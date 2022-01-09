@@ -41,7 +41,7 @@
 
 ## Bonus part
 - [x] ft_lstnew
-- [ ] ft_lstadd_front
+- [x] ft_lstadd_front
 - [ ] ft_lstsize
 - [ ] ft_lstlast
 - [ ] ft_lstadd_back
