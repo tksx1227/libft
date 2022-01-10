@@ -41,7 +41,7 @@ SRCS	= ./ft_isalpha.c \
 		  ./ft_lstclear.c \
 		  ./ft_lstiter.c \
 		  ./ft_lstmap.c \
-OBJS	= $(SRCS%.c=%.o)
+OBJS	= $(SRCS:%.c=%.o)
 INCDIR	= ./
 NAME	= libft.a
 CC		= gcc
