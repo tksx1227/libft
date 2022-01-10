@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 20:51:03 by ttomori           #+#    #+#             */
-/*   Updated: 2021/12/31 21:06:13 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/11 00:38:14 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,16 @@ char	*ft_strrchr(const char *s, int c)
 	size_t	i;
 	size_t	len;
 	char	*p;
+	char	target;
 
 	i = 0;
 	len = ft_strlen(s) + 1;
 	p = (char *)s;
+	target = (char)c;
 	while (i < len)
 	{
-		if (p[len - i] == c)
-			return (p + len - i);
+		if (p[len - i - 1] == target)
+			return (p + len - i - 1);
 		i++;
 	}
 	return (NULL);
@@ -35,7 +37,7 @@ int	main(void)
 {
 	// Parameters
 	char s[] = "Hello World!!!";
-	char c1 = 'o';
+	char c1 = 'H';
 	char c2 = '\0';
 	char c3 = 'u';
 	printf("---------- strrchr ----------\n");
