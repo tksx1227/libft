@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 17:42:42 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/08 20:34:19 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/11 01:03:03 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		return (p);
 	i = 0;
 	little_len = ft_strlen(little);
+	if (len < little_len)
+		return (NULL);
 	while (i <= len - little_len && *p != '\0')
 	{
 		if (ft_strncmp(p, little, little_len) == 0)
@@ -44,6 +46,7 @@ int	main(void)
 	size_t n1 = 24;
 	size_t n2 = 25;
 	size_t n3 = 1000;
+	size_t n4 = 0;
 
 	char *res1 = ft_strnstr(s1, s2, n1);
 	printf("ft_strnstr(\"%s\", \"%s\", %ld) = \"%s\"\n", s1, s2, n1, res1);
@@ -55,6 +58,8 @@ int	main(void)
 	printf("ft_strnstr(\"%s\", \"%s\", %ld) = \"%s\"\n", s1, s4, n3, res4);
 	char *res5 = ft_strnstr(s4, s3, n3);
 	printf("ft_strnstr(\"%s\", \"%s\", %ld) = \"%s\"\n", s4, s3, n3, res5);
+	char *res6 = ft_strnstr(s1, s2, n4);
+	printf("ft_strnstr(\"%s\", \"%s\", %ld) = \"%s\"\n", s1, s2, n4, res6);
 
 	return (0);
 }
