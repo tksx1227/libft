@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 12:55:15 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/09 13:32:15 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/12 17:29:27 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,27 @@ static void	convert_recursive(char *s, long long int n)
 	*s = (n % 10) + '0';
 }
 
+size_t	count_digit(long long int n)
+{
+	size_t	counter;
+
+	if (n == 0)
+		return (1);
+	if (n < 0)
+	{
+		n = -n;
+		counter = 1;
+	}
+	else
+		counter = 0;
+	while (n != 0)
+	{
+		counter++;
+		n /= 10;
+	}
+	return (counter);
+}
+
 char	*ft_itoa(int n)
 {
 	char			*p;
@@ -47,7 +68,7 @@ char	*ft_itoa(int n)
 	long long int	nbr;
 
 	nbr = (long long int)n;
-	p = (char *)malloc(sizeof(char) * 32);
+	p = (char *)malloc(sizeof(char) * (count_digit(nbr) + 1));
 	if (p == NULL)
 		return (NULL);
 	head = p;
