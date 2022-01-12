@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 17:52:04 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/12 10:53:45 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/12 13:58:14 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
-	int				i;
+	size_t			i;
 	unsigned char	uc;
 	unsigned char	*p;
 
