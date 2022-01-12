@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 21:53:47 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/08 11:44:00 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/12 11:57:19 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,22 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	void	*p;
+	size_t	i;
+	size_t	total_size;
+	char	*p;
 
-	if (count == 0 || size == 0 || ULONG_MAX / count <= size)
-		return (NULL);
-	p = malloc(count * size);
+	total_size = count * size;
+	p = (char *)malloc(total_size);
 	if (p == NULL)
 		return (NULL);
-	return (p);
+	i = 0;
+	p[i++] = 0;
+	while (i < total_size)
+	{
+		p[i] = 0;
+		i++;
+	}
+	return ((void *)p);
 }
 
 /*
@@ -33,19 +41,21 @@ int	main(void)
 
 	printf("---------- calloc ----------\n");
 	int	*p1 = (int *)calloc(n, size);
-	for (size_t i = 0; i < n; i++)
+	for (size_t i = 0; i < n / 2; i++)
 		p1[i] = i * 10;
 	for (size_t i = 0; i < n; i++)
 		printf("%d ", p1[i]);
+	free(p1);
 	printf("\n");
 
 	printf("---------- ft_calloc ----------\n");
 	int	*p2 = (int *)ft_calloc(n, size);
-	for (size_t i = 0; i < n; i++)
+	for (size_t i = 0; i < n / 2; i++)
 		p2[i] = i * 10;
 	for (size_t i = 0; i < n; i++)
 		printf("%d ", p2[i]);
 	printf("\n");
+	free(p2);
 	return (0);
 }
 */
