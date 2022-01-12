@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 17:52:04 by ttomori           #+#    #+#             */
-/*   Updated: 2021/12/29 21:29:01 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/12 10:52:25 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,18 @@
 
 void	*ft_memset(void *s, int c, size_t n)
 {
+	int				i;
 	unsigned char	uc;
 	unsigned char	*p;
 
+	i = 0;
 	uc = (unsigned char)c;
 	p = (unsigned char *)s;
-	while (n-- > 0)
-		*p++ = uc;
+	while (i < n)
+	{
+		p[i] = uc;
+		i++;
+	}
 	return (s);
 }
 
@@ -31,7 +36,7 @@ int	main(void)
 	char c = '*';
 	int n = 4;
 	int offset = 3;
-	
+
 	printf("---------- memset ----------\n");
 	char s1[] = "0123456789";
 	char *res1;
