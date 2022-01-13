@@ -6,12 +6,11 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 00:09:40 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/13 22:27:16 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/14 00:54:27 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "libft_bonus.h"
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
