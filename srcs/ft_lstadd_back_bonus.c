@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 00:09:40 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/13 15:40:07 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/13 16:34:34 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	if (lst == NULL)
 		return ;
 	if (*lst == NULL)
+	{
 		*lst = new;
+		return ;
+	}
 	p = *lst;
 	while (p->next != NULL)
 		p = p->next;
