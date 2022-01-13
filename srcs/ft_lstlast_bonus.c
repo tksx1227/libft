@@ -6,11 +6,12 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 23:53:51 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/13 15:41:13 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/13 22:27:52 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "libft_bonus.h"
 
 t_list	*ft_lstlast(t_list *lst)
 {
