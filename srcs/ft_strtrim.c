@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 00:59:49 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/09 18:13:20 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/13 10:27:30 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ char	*ft_strtrim(char const *s, char const *set)
 	while (start_idx < end_idx && is_included(set, s[end_idx]))
 		end_idx--;
 	p = ft_strndup(s + start_idx, end_idx - start_idx + 1);
+	if (p == NULL)
+		return (NULL);
 	return (p);
 }
 
