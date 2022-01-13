@@ -1,22 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_lstnew_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/10 01:19:22 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/10 01:23:59 by ttomori          ###   ########.fr       */
+/*   Created: 2022/01/09 19:09:50 by ttomori           #+#    #+#             */
+/*   Updated: 2022/01/13 15:41:31 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+t_list	*ft_lstnew(void *content)
 {
-	if (lst == NULL)
-		return ;
-	if (del != NULL)
-		del(lst->content);
-	free(lst);
+	t_list	*p;
+
+	p = (t_list *)malloc(sizeof(t_list));
+	if (p == NULL)
+		return (NULL);
+	p->content = content;
+	p->next = NULL;
+	return (p);
 }
+
+/*
+int	main(void)
+{
+	char s[] = "Hello.";
+
+	t_list *res = ft_lstnew(s);
+	printf("Content: \"%s\"\n", (char *)res->content);
+	printf("Next   : %p\n", res->next);
+	free(res);
+
+	return (0);
+}
+*/

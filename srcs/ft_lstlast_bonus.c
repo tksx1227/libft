@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/09 19:59:00 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/09 23:50:25 by ttomori          ###   ########.fr       */
+/*   Created: 2022/01/09 23:53:51 by ttomori           #+#    #+#             */
+/*   Updated: 2022/01/13 15:41:13 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-	int		size;
-
-	size = 0;
-	while (lst != NULL)
-	{
-		size++;
+	if (lst == NULL)
+		return (NULL);
+	while (lst->next != NULL)
 		lst = lst->next;
-	}
-	return (size);
+	return (lst);
 }
 
 /*
@@ -31,7 +27,6 @@ int	main(void)
 	t_list *lst1 = ft_lstnew("AAA");
 	t_list *lst2 = ft_lstnew("BBB");
 	t_list *lst3 = ft_lstnew("CCC");
-	t_list *lst4 = ft_lstnew("DDD");
 	t_list *temp;
 	t_list **pp;
 	t_list *p;
@@ -39,16 +34,16 @@ int	main(void)
 	pp = &lst1;
 	ft_lstadd_front(pp, lst2);
 	ft_lstadd_front(pp, lst3);
-	ft_lstadd_front(pp, lst4);
 	p = *pp;
-
-	int size = ft_lstsize(p);
-	printf("size = %d\n", size);
 	for (int i = 0; p != NULL; i++)
 	{
 		printf("%d. Content: \"%s\"\n", i, (char *)p->content);
 		p = p->next;
 	}
+
+	p = *pp;
+	t_list *last = ft_lstlast(p);
+	printf("Last Content: \"%s\"\n", (char *)last->content);
 
 	p = *pp;
 	while (p != NULL)

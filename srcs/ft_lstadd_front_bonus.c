@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/09 23:53:51 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/10 00:06:35 by ttomori          ###   ########.fr       */
+/*   Created: 2022/01/09 19:19:52 by ttomori           #+#    #+#             */
+/*   Updated: 2022/01/13 15:40:31 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
+	t_list	*temp;
+
 	if (lst == NULL)
-		return (NULL);
-	while (lst->next != NULL)
-		lst = lst->next;
-	return (lst);
+		return ;
+	temp = *lst;
+	*lst = new;
+	ft_lstadd_back(lst, temp);
 }
 
 /*
@@ -40,10 +42,6 @@ int	main(void)
 		printf("%d. Content: \"%s\"\n", i, (char *)p->content);
 		p = p->next;
 	}
-
-	p = *pp;
-	t_list *last = ft_lstlast(p);
-	printf("Last Content: \"%s\"\n", (char *)last->content);
 
 	p = *pp;
 	while (p != NULL)

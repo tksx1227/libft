@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/09 19:19:52 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/10 00:53:11 by ttomori          ###   ########.fr       */
+/*   Created: 2022/01/09 19:59:00 by ttomori           #+#    #+#             */
+/*   Updated: 2022/01/13 15:41:39 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+int	ft_lstsize(t_list *lst)
 {
-	t_list	*temp;
+	int		size;
 
-	if (lst == NULL)
-		return ;
-	temp = *lst;
-	*lst = new;
-	ft_lstadd_back(lst, temp);
+	size = 0;
+	while (lst != NULL)
+	{
+		size++;
+		lst = lst->next;
+	}
+	return (size);
 }
 
 /*
@@ -29,6 +31,7 @@ int	main(void)
 	t_list *lst1 = ft_lstnew("AAA");
 	t_list *lst2 = ft_lstnew("BBB");
 	t_list *lst3 = ft_lstnew("CCC");
+	t_list *lst4 = ft_lstnew("DDD");
 	t_list *temp;
 	t_list **pp;
 	t_list *p;
@@ -36,7 +39,11 @@ int	main(void)
 	pp = &lst1;
 	ft_lstadd_front(pp, lst2);
 	ft_lstadd_front(pp, lst3);
+	ft_lstadd_front(pp, lst4);
 	p = *pp;
+
+	int size = ft_lstsize(p);
+	printf("size = %d\n", size);
 	for (int i = 0; p != NULL; i++)
 	{
 		printf("%d. Content: \"%s\"\n", i, (char *)p->content);
