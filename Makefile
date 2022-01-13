@@ -31,17 +31,18 @@ SRCS	= ./srcs/ft_isalpha.c \
 		  ./srcs/ft_putchar_fd.c \
 		  ./srcs/ft_putstr_fd.c \
 		  ./srcs/ft_putendl_fd.c \
-		  ./srcs/ft_putnbr_fd.c \
-		  ./srcs/ft_lstnew.c \
-		  ./srcs/ft_lstadd_front.c \
-		  ./srcs/ft_lstsize.c \
-		  ./srcs/ft_lstlast.c \
-		  ./srcs/ft_lstadd_back.c \
-		  ./srcs/ft_lstdelone.c \
-		  ./srcs/ft_lstclear.c \
-		  ./srcs/ft_lstiter.c \
-		  ./srcs/ft_lstmap.c
+		  ./srcs/ft_putnbr_fd.c
+BONUS	= ./srcs/ft_lstnew_bonus.c \
+		  ./srcs/ft_lstadd_front_bonus.c \
+		  ./srcs/ft_lstsize_bonus.c \
+		  ./srcs/ft_lstlast_bonus.c \
+		  ./srcs/ft_lstadd_back_bonus.c \
+		  ./srcs/ft_lstdelone_bonus.c \
+		  ./srcs/ft_lstclear_bonus.c \
+		  ./srcs/ft_lstiter_bonus.c \
+		  ./srcs/ft_lstmap_bonus.c
 OBJS	= $(SRCS:%.c=%.o)
+BONUS_OBJS	= $(BONUS:%.c=%.o)
 INCDIR	= ./includes/
 NAME	= libft.a
 CC		= gcc
@@ -57,11 +58,14 @@ $(NAME): $(OBJS)
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+bonus: $(OBJS) $(BONUS_OBJS)
+	ar rc $(NAME) $(OBJS) $(BONUS_OBJS)
+
+.PHONY: all clean fclean re bonus
