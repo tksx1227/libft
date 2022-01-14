@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 19:59:00 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/14 00:55:10 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/14 13:35:39 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,31 +32,26 @@ int	main(void)
 	t_list *lst2 = ft_lstnew("BBB");
 	t_list *lst3 = ft_lstnew("CCC");
 	t_list *lst4 = ft_lstnew("DDD");
-	t_list *temp;
-	t_list **pp;
-	t_list *p;
 
-	pp = &lst1;
-	ft_lstadd_front(pp, lst2);
-	ft_lstadd_front(pp, lst3);
-	ft_lstadd_front(pp, lst4);
-	p = *pp;
+	printf("Size: %d\n", ft_lstsize(lst1));
 
-	int size = ft_lstsize(p);
-	printf("size = %d\n", size);
-	for (int i = 0; p != NULL; i++)
-	{
-		printf("%d. Content: \"%s\"\n", i, (char *)p->content);
-		p = p->next;
-	}
+	printf("Add one element...\n");
+	ft_lstadd_back(&lst1, lst2);
+	printf("Size: %d\n", ft_lstsize(lst1));
 
-	p = *pp;
-	while (p != NULL)
-	{
-		temp = p->next;
-		free(p);
-		p = temp;
-	}
+	printf("Add one element...\n");
+	ft_lstadd_back(&lst1, lst3);
+	printf("Size: %d\n", ft_lstsize(lst1));
+
+	printf("Add one element...\n");
+	ft_lstadd_back(&lst1, lst4);
+	printf("Size: %d\n", ft_lstsize(lst1));
+
+	printf("Remove elements...\n");
+	ft_lstclear(&(lst1->next), NULL);
+	printf("Size: %d\n", ft_lstsize(lst1));
+
+	ft_lstclear(&lst1, NULL);
 
 	return (0);
 }
