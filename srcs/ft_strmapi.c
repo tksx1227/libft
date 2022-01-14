@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 01:09:55 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/09 01:45:17 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/14 15:43:01 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	unsigned int	i;
 	unsigned int	len;
 
+	if (s == NULL || f == NULL)
+		return (NULL);
 	i = 0;
 	len = (unsigned int)ft_strlen(s);
 	p = (char *)malloc(sizeof(char) * (len + 1));
