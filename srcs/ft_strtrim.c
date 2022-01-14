@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 00:59:49 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/13 10:27:30 by marvin           ###   ########.fr       */
+/*   Updated: 2022/01/14 16:34:15 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ char	*ft_strtrim(char const *s, char const *set)
 	size_t	len;
 	char	*p;
 
+	if (s == NULL || set == NULL)
+		return (NULL);
 	len = ft_strlen(s);
 	start_idx = 0;
 	while (is_included(set, s[start_idx]))

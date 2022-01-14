@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 09:40:49 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/09 23:30:50 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/14 16:37:04 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ char	**ft_split(char const *s, char c)
 	char	*head;
 	char	**str_array;
 
+	if (s == NULL)
+		return (NULL);
 	size = count_elem(s, c);
 	str_array = (char **)malloc(sizeof(char *) * (size + 1));
 	if (str_array == NULL)

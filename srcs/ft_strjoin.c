@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 00:28:58 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/09 00:56:44 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/14 16:33:26 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*head;
 	size_t	total_len;
 
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
 	total_len = ft_strlen(s1) + ft_strlen(s2);
 	p = (char *)malloc(sizeof(char) * (total_len + 1));
 	if (p == NULL)
