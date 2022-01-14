@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 10:52:22 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/14 12:28:01 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/14 13:32:53 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*p;
 	t_list	*temp;
 
-	if (lst == NULL || del == NULL)
+	if (lst == NULL)
 		return ;
 	p = *lst;
 	while (p != NULL)
