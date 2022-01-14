@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 23:53:51 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/14 00:54:54 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/14 13:41:37 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,31 +27,19 @@ int	main(void)
 	t_list *lst1 = ft_lstnew("AAA");
 	t_list *lst2 = ft_lstnew("BBB");
 	t_list *lst3 = ft_lstnew("CCC");
-	t_list *temp;
-	t_list **pp;
-	t_list *p;
+	t_list *lst4 = ft_lstnew("DDD");
 
-	pp = &lst1;
-	ft_lstadd_front(pp, lst2);
-	ft_lstadd_front(pp, lst3);
-	p = *pp;
-	for (int i = 0; p != NULL; i++)
-	{
-		printf("%d. Content: \"%s\"\n", i, (char *)p->content);
-		p = p->next;
-	}
+	// AAA -> BBB -> CCC -> DDD
+	ft_lstadd_back(&lst1, lst2);
+	ft_lstadd_back(&lst1, lst3);
+	ft_lstadd_back(&lst1, lst4);
 
-	p = *pp;
-	t_list *last = ft_lstlast(p);
-	printf("Last Content: \"%s\"\n", (char *)last->content);
+	t_list *last1 = ft_lstlast(lst1);
+	t_list *last2 = ft_lstlast(lst2);
+	printf("lst1's last Content: \"%s\"\n", (char *)last1->content);
+	printf("lst2's last Content: \"%s\"\n", (char *)last2->content);
 
-	p = *pp;
-	while (p != NULL)
-	{
-		temp = p->next;
-		free(p);
-		p = temp;
-	}
+	ft_lstclear(&lst1, NULL);
 
 	return (0);
 }
