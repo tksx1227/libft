@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/01 01:03:18 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/01 01:25:48 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/14 14:46:41 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,13 @@
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
-	char	*p1;
-	char	*p2;
 
 	i = 0;
-	p1 = (char *)s1;
-	p2 = (char *)s2;
-	while (i < n && (*p1 != '\0' || *p2 != '\0'))
+	while (i < n && (s1[i] != '\0' || s2[i] != '\0'))
 	{
-		if (*p1 != *p2)
-			return (*p1 - *p2);
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
 		i++;
-		p1++;
-		p2++;
 	}
 	return (0);
 }
