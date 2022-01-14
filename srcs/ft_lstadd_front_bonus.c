@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 19:19:52 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/14 00:54:32 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/14 11:33:07 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	t_list	*temp;
 
-	if (lst == NULL)
+	if (lst == NULL || (*lst != NULL && new == NULL))
 		return ;
 	temp = *lst;
 	*lst = new;
