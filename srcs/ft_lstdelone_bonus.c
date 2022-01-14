@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 01:19:22 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/14 13:46:55 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/14 14:00:57 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,19 @@ int	main(void)
 	printf("lst1's content: %s\n", (char *)lst1->content);
 	printf("lst2's content: %s\n", (char *)lst2->content);
 
-	printf("Free heap area...\n");
+	printf("----- Do not use heap area -----\n");
+	printf("Free an element\n");
 	ft_lstdelone(lst1, NULL);
+	printf("Done...\n");
+
+	printf("----- Use heap area -----\n");
+	printf("Free an element\n");
 	ft_lstdelone(lst2, free);
+	printf("Done...\n");
+
+	printf("----- Arg is NULL -----\n");
+	ft_lstdelone(NULL, NULL);
+	printf("Done...\n");
 
 	return (0);
 }
