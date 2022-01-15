@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 14:21:01 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/10 23:59:36 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/15 21:56:38 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	while (i < n)
 	{
 		if (p[i] == target)
-			return (p + i);
+			return ((void *)(p + i));
 		i++;
 	}
 	return (NULL);
