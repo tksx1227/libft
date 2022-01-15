@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 17:51:07 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/14 00:49:16 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/15 21:45:24 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <ctype.h>
 # include <stdio.h>
 # include <stdlib.h>
+# include <stdint.h>
 # include <string.h>
 # include <limits.h>
 # include <unistd.h>
