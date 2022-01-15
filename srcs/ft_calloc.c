@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 21:53:47 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/12 11:57:19 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/15 21:50:11 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,17 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	size_t	i;
+	void	*p;
 	size_t	total_size;
-	char	*p;
 
+	if (SIZE_MAX / size < count)
+		return (NULL);
 	total_size = count * size;
-	p = (char *)malloc(total_size);
+	p = malloc(total_size);
 	if (p == NULL)
 		return (NULL);
-	i = 0;
-	p[i++] = 0;
-	while (i < total_size)
-	{
-		p[i] = 0;
-		i++;
-	}
-	return ((void *)p);
+	ft_bzero(p, total_size);
+	return (p);
 }
 
 /*
