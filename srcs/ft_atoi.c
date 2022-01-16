@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 12:09:46 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/08 20:05:11 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/16 18:06:15 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,30 +19,52 @@ static int	ft_isspace(int c)
 	return (0);
 }
 
+static int	check_overflow(long n, int m)
+{
+	if (n < 0)
+	{
+		if ((LONG_MIN / 10) < n)
+			return (0);
+		if (m < (LONG_MIN % 10))
+			return (-1);
+	}
+	else
+	{
+		if (n < (LONG_MAX / 10))
+			return (0);
+		if ((LONG_MAX % 10) < m)
+			return (1);
+	}
+	return (0);
+}
+
 int	ft_atoi(const char *str)
 {
-	long long int	num;
-	int				minus_flag;
-	char			*p;
+	int		sign;
+	int		overflow_flag;
+	long	n;
 
-	num = 0;
-	minus_flag = 1;
-	p = (char *)str;
-	while (ft_isspace(*p))
-		p++;
-	if (*p == '+' || *p == '-')
+	n = 0;
+	sign = 1;
+	while (ft_isspace(*str))
+		str++;
+	if (*str == '+' || *str == '-')
 	{
-		if (*p == '-')
-			minus_flag *= -1;
-		p++;
+		if (*str == '-')
+			sign = -1;
+		str++;
 	}
-	while (ft_isdigit(*p))
+	while (ft_isdigit(*str))
 	{
-		num *= 10;
-		num += (*p - '0');
-		p++;
+		overflow_flag = check_overflow(n, sign * (*str - '0'));
+		if (overflow_flag == 1)
+			return (-1);
+		else if (overflow_flag == -1)
+			return (0);
+		n = n * 10 + sign * (*str - '0');
+		str++;
 	}
-	return (minus_flag * num);
+	return ((int)n);
 }
 
 /*
@@ -55,6 +77,10 @@ int	main(void)
 	char s4[] = "  -1234567abc34\t";
 	char s5[] = "2147483647";
 	char s6[] = "-2147483648";
+	char s7[] = " 99999999999";
+	char s8[] = "-99999999999";
+	char s9[] = " 999999999999999999999999";
+	char s10[] = "-999999999999999999999999";
 
 	printf("---------- atoi ---------\n");
 	printf("atoi(\"%s\") = %d\n", s1, atoi(s1));
@@ -63,6 +89,10 @@ int	main(void)
 	printf("atoi(\"%s\") = %d\n", s4, atoi(s4));
 	printf("atoi(\"%s\") = %d\n", s5, atoi(s5));
 	printf("atoi(\"%s\") = %d\n", s6, atoi(s6));
+	printf("atoi(\"%s\") = %d\n", s7, atoi(s7));
+	printf("atoi(\"%s\") = %d\n", s8, atoi(s8));
+	printf("atoi(\"%s\") = %d\n", s9, atoi(s9));
+	printf("atoi(\"%s\") = %d\n", s10, atoi(s10));
 
 	printf("---------- ft_atoi ---------\n");
 	printf("ft_atoi(\"%s\") = %d\n", s1, ft_atoi(s1));
@@ -71,6 +101,11 @@ int	main(void)
 	printf("ft_atoi(\"%s\") = %d\n", s4, ft_atoi(s4));
 	printf("ft_atoi(\"%s\") = %d\n", s5, ft_atoi(s5));
 	printf("ft_atoi(\"%s\") = %d\n", s6, ft_atoi(s6));
+	printf("ft_atoi(\"%s\") = %d\n", s7, ft_atoi(s7));
+	printf("ft_atoi(\"%s\") = %d\n", s8, ft_atoi(s8));
+	printf("ft_atoi(\"%s\") = %d\n", s9, ft_atoi(s9));
+	printf("ft_atoi(\"%s\") = %d\n", s10, ft_atoi(s10));
+
 	return (0);
 }
 */
