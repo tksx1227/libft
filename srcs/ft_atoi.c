@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 12:09:46 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/16 18:06:15 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/16 19:01:21 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,9 @@ int	ft_atoi(const char *str)
 	{
 		overflow_flag = check_overflow(n, sign * (*str - '0'));
 		if (overflow_flag == 1)
-			return (-1);
+			return ((int)LONG_MAX);
 		else if (overflow_flag == -1)
-			return (0);
+			return ((int)LONG_MIN);
 		n = n * 10 + sign * (*str - '0');
 		str++;
 	}
