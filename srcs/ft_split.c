@@ -6,11 +6,24 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 09:40:49 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/14 16:37:04 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/16 15:11:03 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static void	free_all(char **array)
+{
+	size_t	i;
+
+	i = 0;
+	while (array[i] != NULL)
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
+}
 
 static int	count_elem(char const *s, char c)
 {
@@ -31,34 +44,34 @@ static int	count_elem(char const *s, char c)
 	return (counter);
 }
 
-static char	*ft_strndup(char *s, size_t n)
+static int	split_str(char **array, char *src, char c, size_t size)
 {
 	size_t	i;
-	size_t	len;
-	char	*p;
+	size_t	head;
+	size_t	tail;
 
-	len = ft_strlen(s);
-	if (len < n)
-		n = len;
-	p = (char *)malloc(sizeof(char) * (n + 1));
-	if (p == NULL)
-		return (NULL);
 	i = 0;
-	while (i < n)
+	tail = 0;
+	while (i < size)
 	{
-		p[i] = s[i];
+		head = tail;
+		while (src[head] != '\0' && src[head] == c)
+			head++;
+		tail = head;
+		while (src[tail] != '\0' && src[tail] != c)
+			tail++;
+		array[i] = ft_substr(src, (unsigned int)head, tail - head);
+		if (array[i] == NULL)
+			return (-1);
 		i++;
 	}
-	p[i] = '\0';
-	return (p);
+	return (1);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	int		i;
+	int		res;
 	int		size;
-	size_t	len;
-	char	*head;
 	char	**str_array;
 
 	if (s == NULL)
@@ -67,18 +80,13 @@ char	**ft_split(char const *s, char c)
 	str_array = (char **)malloc(sizeof(char *) * (size + 1));
 	if (str_array == NULL)
 		return (NULL);
-	i = 0;
-	while (i < size)
+	res = split_str(str_array, (char *)s, c, size);
+	if (res == -1)
 	{
-		while (*s != '\0' && *s == c)
-			s++;
-		len = 0;
-		head = (char *)s;
-		while (*s != '\0' && *s++ != c)
-			len++;
-		str_array[i++] = ft_strndup(head, len);
+		free_all(str_array);
+		return (NULL);
 	}
-	str_array[i] = NULL;
+	str_array[size] = NULL;
 	return (str_array);
 }
 
@@ -93,13 +101,6 @@ static void	print_array(char **s)
 		printf("array[%d] = \"%s\"\n", i, s[i]);
 		i++;
 	}
-}
-
-static void	free_all(char **s)
-{
-	for (int i = 0; s[i] != NULL; i++)
-		free(s[i]);
-	free(s);
 }
 
 void	do_test(char *s, char c)
