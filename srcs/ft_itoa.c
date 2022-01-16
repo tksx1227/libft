@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 12:55:15 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/16 10:23:36 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/16 18:11:26 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	convert_recursive(char *s, long long int n)
 	*s = (n % 10) + '0';
 }
 
-int	count_digit(long long int n)
+static int	count_digit(long long int n)
 {
 	int	counter;
 
