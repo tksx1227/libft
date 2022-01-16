@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 15:51:48 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/12 13:37:07 by marvin           ###   ########.fr       */
+/*   Updated: 2022/01/16 14:26:42 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ char	*ft_strdup(const char *s)
 	char	*p;
 
 	len = ft_strlen(s);
-	p = (char *)malloc(sizeof(char) * (len + 1));
+	p = (char *)ft_calloc(sizeof(char), (len + 1));
 	if (p == NULL)
 		return (NULL);
-	ft_memmove(p, s, len + 1);
+	ft_memmove(p, s, len);
 	return (p);
 }
 
