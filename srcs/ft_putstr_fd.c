@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 22:53:41 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/14 16:30:49 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/16 11:33:22 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,39 @@
 
 void	ft_putstr_fd(char const *s, int fd)
 {
+	int		len;
 	char	*p;
 
 	if (s == NULL)
 		return ;
+	len = 0;
 	p = (char *)s;
-	while (*p != '\0')
-		write(fd, p++, 1);
+	while (1)
+	{
+		if (p[len] == '\0' || len == INT_MAX)
+		{
+			write(fd, p, len);
+			if (p[len] == '\0')
+				break ;
+			p += len;
+			len = 0;
+			continue ;
+		}
+		len++;
+	}
 }
 
 /*
 int	main(void)
 {
 	// Paramters
-	char s[] = "Hello World!!\n";
+	char s[] = "Hello World!!";
 	int fd = 1;
 
-	printf("s = %s", s);
+	printf("s = %s\n", s);
 	printf("fd = %d\n", fd);
 	ft_putstr_fd(s, fd);
+	printf("\n");
 	return (0);
 }
 */
