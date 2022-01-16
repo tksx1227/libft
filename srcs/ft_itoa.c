@@ -6,11 +6,11 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 12:55:15 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/16 02:12:41 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/16 10:23:36 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/libft.h"
+#include "libft.h"
 
 static void	convert_recursive(char *s, long long int n)
 {
