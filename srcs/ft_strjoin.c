@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 00:28:58 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/14 16:33:26 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/16 14:14:50 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,22 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		i;
-	char	*p;
-	char	*head;
-	size_t	total_len;
+	void	*p;
+	size_t	len1;
+	size_t	len2;
 
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	total_len = ft_strlen(s1) + ft_strlen(s2);
-	p = (char *)malloc(sizeof(char) * (total_len + 1));
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	if (len1 + len2 < len1 || len1 + len2 < len2)
+		return (NULL);
+	p = ft_calloc(sizeof(char), len1 + len2 + 1);
 	if (p == NULL)
 		return (NULL);
-	head = p;
-	i = 0;
-	while (s1[i] != '\0')
-		*p++ = s1[i++];
-	i = 0;
-	while (s2[i] != '\0')
-		*p++ = s2[i++];
-	*p = '\0';
-	return (head);
+	ft_memmove(p, (void *)s1, len1);
+	ft_memmove(p + len1, (void *)s2, len2);
+	return ((char *)p);
 }
 
 /*
