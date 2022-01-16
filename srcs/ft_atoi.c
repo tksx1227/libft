@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 12:09:46 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/16 19:01:21 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/17 01:02:22 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,16 @@ static int	check_overflow(long n, int m)
 {
 	if (n < 0)
 	{
-		if ((LONG_MIN / 10) < n)
-			return (0);
-		if (m < (LONG_MIN % 10))
+		if (n < (LONG_MIN / 10))
+			return (-1);
+		if ((LONG_MIN / 10) == n && m < (LONG_MIN % 10))
 			return (-1);
 	}
 	else
 	{
-		if (n < (LONG_MAX / 10))
-			return (0);
-		if ((LONG_MAX % 10) < m)
+		if ((LONG_MAX / 10) < n)
+			return (1);
+		if ((LONG_MAX / 10) == n && (LONG_MAX % 10) < m)
 			return (1);
 	}
 	return (0);
@@ -77,10 +77,10 @@ int	main(void)
 	char s4[] = "  -1234567abc34\t";
 	char s5[] = "2147483647";
 	char s6[] = "-2147483648";
-	char s7[] = " 99999999999";
-	char s8[] = "-99999999999";
-	char s9[] = " 999999999999999999999999";
-	char s10[] = "-999999999999999999999999";
+	char s7[] = " 9223372036854775800";
+	char s8[] = "-9223372036854775800";
+	char s9[] = " 9223372036854775809";
+	char s10[] = "-9223372036854775809";
 
 	printf("---------- atoi ---------\n");
 	printf("atoi(\"%s\") = %d\n", s1, atoi(s1));
