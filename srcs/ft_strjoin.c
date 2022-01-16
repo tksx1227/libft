@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 00:28:58 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/16 14:14:50 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/16 18:39:08 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
-	if (len1 + len2 < len1 || len1 + len2 < len2)
+	if ((SIZE_MAX - len1) <= len2)
 		return (NULL);
 	p = ft_calloc(sizeof(char), len1 + len2 + 1);
 	if (p == NULL)
