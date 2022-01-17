@@ -46,14 +46,14 @@ BONUS_OBJS	= $(BONUS:%.c=%.o)
 INCDIR	= ./includes/
 NAME	= libft.a
 CC		= gcc
-RM		= rm -f
 CFLAGS	= -Wall -Wextra -Werror
+ARFLAGS	= rv
 
 .c.o:
 	$(CC) $(CFLAGS) -I $(INCDIR) -c $< -o $(<:.c=.o)
 
 $(NAME): $(OBJS)
-	ar rc $(NAME) $(OBJS)
+	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 
 all: $(NAME)
 
@@ -66,6 +66,6 @@ fclean: clean
 re: fclean all
 
 bonus: $(OBJS) $(BONUS_OBJS)
-	ar rc $(NAME) $(OBJS) $(BONUS_OBJS)
+	$(AR) $(ARFLAGS) $(NAME) $(OBJS) $(BONUS_OBJS)
 
 .PHONY: all clean fclean re bonus
