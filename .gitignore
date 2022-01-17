@@ -1,3 +1,8 @@
+# Executable file
 *.out
+
+# Object file
 *.o
+
+# Library
 /libft.a
