@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 22:26:02 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/16 19:12:24 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/18 12:49:55 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t maxlen)
 	size = ft_strlen(&s[start]);
 	if (maxlen < size)
 		size = maxlen;
-	p = ft_calloc(sizeof(char), (size + 1));
+	p = ft_calloc(size + 1, sizeof(char));
 	if (p == NULL)
 		return (NULL);
 	ft_memmove(p, (void *)(s + start), size);
