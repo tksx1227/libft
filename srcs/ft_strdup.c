@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 15:51:48 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/16 14:26:42 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/18 12:48:56 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *s)
 	char	*p;
 
 	len = ft_strlen(s);
-	p = (char *)ft_calloc(sizeof(char), (len + 1));
+	p = (char *)ft_calloc(len + 1, sizeof(char));
 	if (p == NULL)
 		return (NULL);
 	ft_memmove(p, s, len);
