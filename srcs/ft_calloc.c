@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 21:53:47 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/16 09:23:25 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/18 12:45:59 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_calloc(size_t count, size_t size)
 	void	*p;
 	size_t	total_size;
 
-	if (SIZE_MAX / size < count)
+	if (size != 0 && SIZE_MAX / size < count)
 		return (NULL);
 	total_size = count * size;
 	if (total_size == 0)
