@@ -45,7 +45,6 @@ OBJS	= $(SRCS:%.c=%.o)
 BONUS_OBJS	= $(BONUS:%.c=%.o)
 INCDIR	= ./includes/
 NAME	= libft.a
-CC		= cc
 CFLAGS	= -Wall -Wextra -Werror
 ARFLAGS	= rv
 
