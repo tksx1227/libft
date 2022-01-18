@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 09:40:49 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/16 15:11:03 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/18 11:45:23 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ static void	free_all(char **array)
 	free(array);
 }
 
-static int	count_elem(char const *s, char c)
+static size_t	count_elem(char const *s, char c)
 {
 	char	*p;
-	int		counter;
+	size_t	counter;
 
 	counter = 0;
 	p = (char *)s;
@@ -71,7 +71,7 @@ static int	split_str(char **array, char *src, char c, size_t size)
 char	**ft_split(char const *s, char c)
 {
 	int		res;
-	int		size;
+	size_t	size;
 	char	**str_array;
 
 	if (s == NULL)
