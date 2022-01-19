@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 22:26:02 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/18 12:49:55 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/19 15:02:52 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_substr(const char *s, unsigned int start, size_t maxlen)
 {
-	void	*p;
+	char	*p;
 	size_t	len;
 	size_t	size;
 
@@ -22,15 +22,15 @@ char	*ft_substr(const char *s, unsigned int start, size_t maxlen)
 		return (NULL);
 	len = ft_strlen(s);
 	if (len < (size_t)start)
-		start = len;
-	size = ft_strlen(&s[start]);
+		return (ft_strdup(""));
+	size = ft_strlen(s + start);
 	if (maxlen < size)
 		size = maxlen;
-	p = ft_calloc(size + 1, sizeof(char));
+	p = (char *)ft_calloc(size + 1, sizeof(char));
 	if (p == NULL)
 		return (NULL);
-	ft_memmove(p, (void *)(s + start), size);
-	return ((char *)p);
+	ft_memmove(p, s + start, size);
+	return (p);
 }
 
 /*
