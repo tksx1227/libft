@@ -43,13 +43,18 @@ BONUS	= ./srcs/ft_lstnew_bonus.c \
 		  ./srcs/ft_lstmap_bonus.c
 OBJS	= $(SRCS:%.c=%.o)
 BONUS_OBJS	= $(BONUS:%.c=%.o)
+CC		= cc
 INCDIR	= ./includes/
 NAME	= libft.a
 CFLAGS	= -Wall -Wextra -Werror
-ARFLAGS	= rv
+ARFLAGS	= rc
+
+ifdef WITH_BONUS
+	OBJS += $(BONUS_OBJS)
+endif
 
 .c.o:
-	$(CC) $(CFLAGS) -I $(INCDIR) -c $< -o $(<:.c=.o)
+	$(CC) $(CFLAGS) -I$(INCDIR) -c $< -o $(<:.c=.o)
 
 $(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
@@ -64,7 +69,7 @@ fclean: clean
 
 re: fclean all
 
-bonus: $(OBJS) $(BONUS_OBJS)
-	$(AR) $(ARFLAGS) $(NAME) $(OBJS) $(BONUS_OBJS)
+bonus:
+	@make WITH_BONUS=1
 
 .PHONY: all clean fclean re bonus
