@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 09:40:49 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/18 11:45:23 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/19 15:22:26 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,27 @@ static size_t	count_elem(char const *s, char c)
 	return (counter);
 }
 
+static char	*ft_substr_temp(const char *s, size_t start, size_t maxlen)
+{
+	char	*p;
+	size_t	len;
+	size_t	size;
+
+	if (s == NULL)
+		return (NULL);
+	len = ft_strlen(s);
+	if (len <= start)
+		return (ft_strdup(""));
+	size = ft_strlen(s + start);
+	if (maxlen < size)
+		size = maxlen;
+	p = (char *)ft_calloc(size + 1, sizeof(char));
+	if (p == NULL)
+		return (NULL);
+	ft_memmove(p, s + start, size);
+	return (p);
+}
+
 static int	split_str(char **array, char *src, char c, size_t size)
 {
 	size_t	i;
@@ -60,7 +81,7 @@ static int	split_str(char **array, char *src, char c, size_t size)
 		tail = head;
 		while (src[tail] != '\0' && src[tail] != c)
 			tail++;
-		array[i] = ft_substr(src, (unsigned int)head, tail - head);
+		array[i] = ft_substr_temp(src, head, tail - head);
 		if (array[i] == NULL)
 			return (-1);
 		i++;
