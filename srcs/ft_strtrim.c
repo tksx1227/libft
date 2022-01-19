@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 00:59:49 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/19 15:15:52 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/19 15:23:30 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static char	*ft_substr_temp(const char *s, size_t start, size_t maxlen)
 	if (s == NULL)
 		return (NULL);
 	len = ft_strlen(s);
-	if (len < start)
+	if (len <= start)
 		return (ft_strdup(""));
 	size = ft_strlen(s + start);
 	if (maxlen < size)
