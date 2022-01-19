@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 09:40:49 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/19 15:22:26 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/20 00:06:00 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,51 +110,3 @@ char	**ft_split(char const *s, char c)
 	str_array[size] = NULL;
 	return (str_array);
 }
-
-/*
-static void	print_array(char **s)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != NULL)
-	{
-		printf("array[%d] = \"%s\"\n", i, s[i]);
-		i++;
-	}
-}
-
-void	do_test(char *s, char c)
-{
-	printf("str = \"%s\", delimiter = '%c'\n", s, c);
-	char **res = ft_split(s, c);
-	print_array(res);
-	printf("------------------------------------------\n");
-	free_all(res);
-}
-
-int	main(void)
-{
-	// Parameters
-	char s1[] = "ABCDABC DABCD!!!!AB";
-	char s2[] = "";
-	char s3[] = "CCCCCCCCC";
-	char s4[] = " ";
-	char c1 = 'C';
-	char c2 = 'A';
-	char c3 = '!';
-	char c4 = 'O';
-	char c5 = ' ';
-
-	do_test(s1, c1);
-	do_test(s1, c2);
-	do_test(s1, c3);
-	do_test(s1, c4);
-	do_test(s1, c5);
-	do_test(s2, c1);
-	do_test(s3, c1);
-	do_test(s4, c1);
-
-	return (0);
-}
-*/

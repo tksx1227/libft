@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 22:53:41 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/16 11:33:22 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/20 00:05:47 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,3 @@ void	ft_putstr_fd(char const *s, int fd)
 		len++;
 	}
 }
-
-/*
-int	main(void)
-{
-	// Paramters
-	char s[] = "Hello World!!";
-	int fd = 1;
-
-	printf("s = %s\n", s);
-	printf("fd = %d\n", fd);
-	ft_putstr_fd(s, fd);
-	printf("\n");
-	return (0);
-}
-*/

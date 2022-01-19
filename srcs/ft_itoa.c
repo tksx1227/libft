@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 12:55:15 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/16 18:11:26 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/20 00:03:24 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,30 +64,3 @@ char	*ft_itoa(int n)
 	convert_recursive(head + digit - 1, nbr);
 	return (head);
 }
-
-/*
-void	print_test(int n)
-{
-	char *res = ft_itoa(n);
-	printf("Integer: %d, String: \"%s\"\n", n, res);
-	free(res);
-}
-
-int	main(void)
-{
-	// Parameters
-	int n1 = 0;
-	int n2 = -42;
-	int n3 = 2147483647;
-	int n4 = -2147483648;
-	int n5 = 12345;
-
-	print_test(n1);
-	print_test(n2);
-	print_test(n3);
-	print_test(n4);
-	print_test(n5);
-
-	return (0);
-}
-*/

@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 00:28:58 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/19 15:36:04 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/20 00:06:20 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,22 +35,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_memmove(p + len1, s2, len2);
 	return (p);
 }
-
-/*
-int	main(void)
-{
-	// Parameters
-	char s1[] = "Hello";
-	char s2[] = " World!!";
-	char s3[] = "";
-
-	char *res1 = ft_strjoin(s1, s2);
-	printf("ft_strjoin(\"%s\", \"%s\") = \"%s\"\n", s1, s2, res1);
-	free(res1);
-
-	char *res2 = ft_strjoin(s1, s3);
-	printf("ft_strjoin(\"%s\", \"%s\") = \"%s\"\n", s1, s3, res2);
-	free(res2);
-	return (0);
-}
-*/

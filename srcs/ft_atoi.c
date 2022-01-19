@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 12:09:46 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/17 01:02:22 by marvin           ###   ########.fr       */
+/*   Updated: 2022/01/20 00:02:07 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,46 +66,3 @@ int	ft_atoi(const char *str)
 	}
 	return ((int)n);
 }
-
-/*
-int	main(void)
-{
-	// Paramters
-	char s1[] = " \n \t \v \f \r  -5 6+145  ";
-	char s2[] = " -+234+34";
-	char s3[] = "  a 342414";
-	char s4[] = "  -1234567abc34\t";
-	char s5[] = "2147483647";
-	char s6[] = "-2147483648";
-	char s7[] = " 9223372036854775800";
-	char s8[] = "-9223372036854775800";
-	char s9[] = " 9223372036854775809";
-	char s10[] = "-9223372036854775809";
-
-	printf("---------- atoi ---------\n");
-	printf("atoi(\"%s\") = %d\n", s1, atoi(s1));
-	printf("atoi(\"%s\") = %d\n", s2, atoi(s2));
-	printf("atoi(\"%s\") = %d\n", s3, atoi(s3));
-	printf("atoi(\"%s\") = %d\n", s4, atoi(s4));
-	printf("atoi(\"%s\") = %d\n", s5, atoi(s5));
-	printf("atoi(\"%s\") = %d\n", s6, atoi(s6));
-	printf("atoi(\"%s\") = %d\n", s7, atoi(s7));
-	printf("atoi(\"%s\") = %d\n", s8, atoi(s8));
-	printf("atoi(\"%s\") = %d\n", s9, atoi(s9));
-	printf("atoi(\"%s\") = %d\n", s10, atoi(s10));
-
-	printf("---------- ft_atoi ---------\n");
-	printf("ft_atoi(\"%s\") = %d\n", s1, ft_atoi(s1));
-	printf("ft_atoi(\"%s\") = %d\n", s2, ft_atoi(s2));
-	printf("ft_atoi(\"%s\") = %d\n", s3, ft_atoi(s3));
-	printf("ft_atoi(\"%s\") = %d\n", s4, ft_atoi(s4));
-	printf("ft_atoi(\"%s\") = %d\n", s5, ft_atoi(s5));
-	printf("ft_atoi(\"%s\") = %d\n", s6, ft_atoi(s6));
-	printf("ft_atoi(\"%s\") = %d\n", s7, ft_atoi(s7));
-	printf("ft_atoi(\"%s\") = %d\n", s8, ft_atoi(s8));
-	printf("ft_atoi(\"%s\") = %d\n", s9, ft_atoi(s9));
-	printf("ft_atoi(\"%s\") = %d\n", s10, ft_atoi(s10));
-
-	return (0);
-}
-*/

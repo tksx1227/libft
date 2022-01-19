@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 01:09:55 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/18 12:58:26 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/20 00:06:49 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,25 +37,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	p[i] = '\0';
 	return (p);
 }
-
-/*
-static char	f(unsigned int i, char c)
-{
-	char	res;
-
-	res = ((c * i) % 94) + 33;
-	return (res);
-}
-
-int	main(void)
-{
-	// Parameters
-	char s[] = "Hello World!!!";
-
-	char *res = ft_strmapi(s, f);
-	printf("Original: \"%s\"\n", s);
-	printf("Result  : \"%s\"\n", res);
-	free(res);
-	return (0);
-}
-*/

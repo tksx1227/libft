@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/31 20:51:03 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/16 01:39:44 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/20 00:07:05 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,24 +31,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-
-/*
-int	main(void)
-{
-	// Parameters
-	char s[] = "Hello World!!!";
-	char c1 = 'H';
-	char c2 = '\0';
-	char c3 = 'u';
-	printf("---------- strrchr ----------\n");
-	printf("strrchr(\"%s\", '%c') = %s\n", s, c1, strrchr(s, c1));
-	printf("strrchr(\"%s\", '%c') = %s\n", s, c2, strrchr(s, c2));
-	printf("strrchr(\"%s\", '%c') = %s\n", s, c3, strrchr(s, c3));
-
-	printf("---------- ft_strrchr ----------\n");
-	printf("ft_strrchr(\"%s\", '%c') = %s\n", s, c1, ft_strrchr(s, c1));
-	printf("ft_strrchr(\"%s\", '%c') = %s\n", s, c2, ft_strrchr(s, c2));
-	printf("ft_strrchr(\"%s\", '%c') = %s\n", s, c3, ft_strrchr(s, c3));
-	return (0);
-}
-*/
