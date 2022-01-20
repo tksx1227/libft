@@ -6,19 +6,13 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 23:05:14 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/20 00:05:41 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/21 00:39:56 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	void	putnbr_recursion(long long int nbr, int fd)
-{
-	if (nbr == 0)
-		return ;
-	putnbr_recursion(nbr / 10, fd);
-	ft_putchar_fd((nbr % 10) + '0', fd);
-}
+static	void	putnbr_recursion(long long int nbr, int fd);
 
 void	ft_putnbr_fd(int n, int fd)
 {
@@ -36,4 +30,12 @@ void	ft_putnbr_fd(int n, int fd)
 		return ;
 	}
 	putnbr_recursion(nbr, fd);
+}
+
+static	void	putnbr_recursion(long long int nbr, int fd)
+{
+	if (nbr == 0)
+		return ;
+	putnbr_recursion(nbr / 10, fd);
+	ft_putchar_fd((nbr % 10) + '0', fd);
 }

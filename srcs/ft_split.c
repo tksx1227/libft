@@ -6,11 +6,37 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/09 09:40:49 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/20 00:16:29 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/21 00:41:44 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static void		free_all(char **array);
+static size_t	count_elem(char const *s, char c);
+static int		split_str(char **array, char *src, char c, size_t size);
+
+char	**ft_split(char const *s, char c)
+{
+	int		res;
+	size_t	size;
+	char	**str_array;
+
+	if (s == NULL)
+		return (NULL);
+	size = count_elem(s, c);
+	str_array = (char **)malloc(sizeof(char *) * (size + 1));
+	if (str_array == NULL)
+		return (NULL);
+	res = split_str(str_array, (char *)s, c, size);
+	if (res == -1)
+	{
+		free_all(str_array);
+		return (NULL);
+	}
+	str_array[size] = NULL;
+	return (str_array);
+}
 
 static void	free_all(char **array)
 {
@@ -66,26 +92,4 @@ static int	split_str(char **array, char *src, char c, size_t size)
 		i++;
 	}
 	return (1);
-}
-
-char	**ft_split(char const *s, char c)
-{
-	int		res;
-	size_t	size;
-	char	**str_array;
-
-	if (s == NULL)
-		return (NULL);
-	size = count_elem(s, c);
-	str_array = (char **)malloc(sizeof(char *) * (size + 1));
-	if (str_array == NULL)
-		return (NULL);
-	res = split_str(str_array, (char *)s, c, size);
-	if (res == -1)
-	{
-		free_all(str_array);
-		return (NULL);
-	}
-	str_array[size] = NULL;
-	return (str_array);
 }
