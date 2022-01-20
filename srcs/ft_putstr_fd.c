@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/03 22:53:41 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/20 00:05:47 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/21 00:56:07 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,16 @@
 
 void	ft_putstr_fd(char const *s, int fd)
 {
-	int		len;
-	char	*p;
+	size_t	len;
 
 	if (s == NULL)
 		return ;
-	len = 0;
-	p = (char *)s;
-	while (1)
+	len = ft_strlen(s);
+	while (INT_MAX < len)
 	{
-		if (p[len] == '\0' || len == INT_MAX)
-		{
-			write(fd, p, len);
-			if (p[len] == '\0')
-				break ;
-			p += len;
-			len = 0;
-			continue ;
-		}
-		len++;
+		write(fd, s, INT_MAX);
+		s += INT_MAX;
+		len -= INT_MAX;
 	}
+	write(fd, s, len);
 }
