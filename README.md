@@ -1,5 +1,5 @@
-# 42-libft
-42Tokyoの課題（libft）
+# libft
+My very first own library.
 
 ## Part 1
 - [x] ft_isalpha
