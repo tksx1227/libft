@@ -6,7 +6,7 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/08 17:42:42 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/20 00:07:00 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/01/29 15:43:46 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	p = (char *)big;
 	if (little[0] == '\0')
 		return (p);
+	if (len == 0)
+		return (NULL);
 	i = 0;
 	little_len = ft_strlen(little);
 	big_len = ft_strlen(big);
