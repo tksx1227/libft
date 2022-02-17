@@ -6,18 +6,15 @@
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 17:51:07 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/30 15:39:07 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/02/17 18:58:28 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <ctype.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <stdint.h>
-# include <string.h>
 # include <limits.h>
 # include <unistd.h>
 # include <errno.h>
