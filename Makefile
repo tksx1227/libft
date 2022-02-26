@@ -19,10 +19,13 @@ FILES	:= ft_isalpha.c ft_isdigit.c ft_isalnum.c \
 SRCS	:= $(addprefix $(SRCDIR)/, $(FILES))
 OBJS	:= $(addprefix $(OBJDIR)/, $(FILES:.c=.o))
 CC		:= cc
+RM		:= rm -rf
 NAME	:= $(addprefix $(LIBDIR)/, libft.a)
 INCDIR	:= includes
 CFLAGS	:= -Wall -Wextra -Werror
 ARFLAGS	:= rc
+
+all: $(LIBDIR) $(OBJDIR) $(NAME)
 
 $(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
@@ -30,13 +33,17 @@ $(NAME): $(OBJS)
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	$(CC) $(CFLAGS) -I$(INCDIR) -c $< -o $@
 
-all: $(NAME)
+$(LIBDIR):
+	mkdir -p $@
+
+$(OBJDIR):
+	mkdir -p $@
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJDIR)
 
 fclean: clean
-	$(RM) $(NAME)
+	$(RM) $(LIBDIR)
 
 re: fclean all
 
