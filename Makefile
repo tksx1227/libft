@@ -18,11 +18,12 @@ FILES	:= ft_isalpha.c ft_isdigit.c ft_isalnum.c \
 		   ft_lstmap.c
 SRCS	:= $(addprefix $(SRCDIR)/, $(FILES))
 OBJS	:= $(addprefix $(OBJDIR)/, $(FILES:.c=.o))
+DEPS	:= $(addprefix $(OBJDIR)/, $(FILES:.c=.d))
 CC		:= cc
 RM		:= rm -rf
-NAME	:= $(addprefix $(LIBDIR)/, libft.a)
+NAME	:= $(LIBDIR)/libft.a
 INCDIR	:= includes
-CFLAGS	:= -Wall -Wextra -Werror
+CFLAGS	:= -Wall -Wextra -Werror -MMD -MP
 ARFLAGS	:= rc
 
 all: $(LIBDIR) $(OBJDIR) $(NAME)
@@ -46,5 +47,7 @@ fclean: clean
 	$(RM) $(LIBDIR)
 
 re: fclean all
+
+-include $(DEPS)
 
 .PHONY: all clean fclean re
