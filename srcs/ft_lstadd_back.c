@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ttomori <ttomori@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/10 00:09:40 by ttomori           #+#    #+#             */
-/*   Updated: 2022/01/20 00:18:11 by ttomori          ###   ########.fr       */
+/*   Updated: 2022/03/01 01:44:04 by ttomori          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,12 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		return ;
 	last = ft_lstlast(*lst);
 	if (last == NULL)
+	{
 		*lst = new;
+	}
 	else
+	{
 		last->next = new;
+		new->prev = last;
+	}
 }
